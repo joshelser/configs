@@ -23,12 +23,12 @@
 
   <property>
     <name>replication.name</name>
-    <value>slave</value>
+    <value>master</value>
   </property>
 
   <property>
     <name>instance.volumes</name>
-    <value>hdfs://localhost:8020/accumulo-slave</value>
+    <value>hdfs://promiscuity:8020/accumulo-master</value>
   </property>
 
   <property>
@@ -58,12 +58,12 @@
 
   <property>
     <name>tserver.memory.maps.max</name>
-    <value>1G</value>
+    <value>4G</value>
   </property>
 
   <property>
     <name>tserver.cache.data.size</name>
-    <value>128M</value>
+    <value>512M</value>
   </property>
 
   <property>
@@ -90,6 +90,31 @@
   <property>
     <name>tserver.mutation.queue.max</name>
     <value>4M</value>
+  </property>
+
+  <property>
+    <name>tserver.compaction.major.concurrent.max</name>
+    <value>3</value>
+  </property>
+
+  <property>
+    <name>tserver.compaction.minor.concurrent.max</name>
+    <value>6</value>
+  </property>
+
+  <property>
+    <name>tserver.port.client</name>
+    <value>0</value>
+  </property>
+
+  <property>
+    <name>replication.receipt.service.port</name>
+    <value>0</value>
+  </property>
+
+  <property>
+    <name>replication.work.assigner</name>
+    <value>org.apache.accumulo.master.replication.UnorderedWorkAssigner</value>
   </property>
 
   <property>
